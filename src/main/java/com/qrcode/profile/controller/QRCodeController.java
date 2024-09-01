@@ -14,7 +14,7 @@ import com.qrcode.profile.service.QRCodeService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin("*")
+@CrossOrigin(origins = "https://earnest-medovik-69e06f.netlify.app")
 public class QRCodeController {
 
 	@Autowired
