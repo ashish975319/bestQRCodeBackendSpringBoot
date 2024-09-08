@@ -1,46 +1,48 @@
 package com.qrcode.profile.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.Data;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "qr_code_data")
 @Data
 public class QRCodeData {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Column(nullable = false)
-	private String name;
+    @Column(nullable = false)
+    private String name;
 
-	@Column
-	private String landline;
+    @Column
+    private String landline;
 
-	@Column
-	private String mobile;
+    @Column
+    private String mobile;
 
-	@Column
-	private String email;
+    @Column
+    private String email;
 
-	@Column
-	private String website;
+    @Column
+    private String website;
 
-	@Column
-	private String address;
+    @Column
+    private String address;
 
-	@Column
-	private String company;
+    @Column
+    private String company;
 
-	@Column
-	private String designation;
+    @Column
+    private String designation;
 
-	@Column(nullable = false)
-	private String secureKey;
+    @Column(nullable = false)
+    private String secureKey;
+
+    @Lob
+    @Column(name = "imagedata")
+    private byte[] photo;
 }
